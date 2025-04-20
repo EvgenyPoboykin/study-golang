@@ -1,4 +1,4 @@
-module example/api
+module gin/rest_api
 
 go 1.22.2
 

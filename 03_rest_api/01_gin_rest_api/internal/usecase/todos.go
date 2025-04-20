@@ -1,8 +1,8 @@
 package usecase
 
 import (
-	"example/api/internal/models"
-	"example/api/internal/repository"
+	"gin/rest_api/internal/models"
+	"gin/rest_api/internal/repository"
 )
 
 type Usecase struct {

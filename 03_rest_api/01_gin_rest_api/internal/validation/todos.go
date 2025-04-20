@@ -1,7 +1,7 @@
 package validation
 
 import (
-	"example/api/internal/models"
+	"gin/rest_api/internal/models"
 
 	"github.com/gin-gonic/gin"
 )

@@ -1,7 +1,7 @@
 package main
 
 import (
-	"example/api/di"
+	"gin/rest_api/di"
 )
 
 func main() {

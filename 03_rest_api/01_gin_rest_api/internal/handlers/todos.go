@@ -2,9 +2,8 @@ package handlers
 
 import (
 	"encoding/json"
-
-	"example/api/internal/usecase"
-	"example/api/internal/validation"
+	"gin/rest_api/internal/usecase"
+	"gin/rest_api/internal/validation"
 
 	"github.com/gin-gonic/gin"
 )

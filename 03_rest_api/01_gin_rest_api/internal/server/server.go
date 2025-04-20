@@ -1,7 +1,7 @@
 package server
 
 import (
-	"example/api/internal/handlers"
+	"gin/rest_api/internal/handlers"
 
 	"github.com/gin-gonic/gin"
 )

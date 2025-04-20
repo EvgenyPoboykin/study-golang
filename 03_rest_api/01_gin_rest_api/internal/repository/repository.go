@@ -1,7 +1,7 @@
 package repository
 
 import (
-	"example/api/internal/models"
+	"gin/rest_api/internal/models"
 
 	"github.com/google/uuid"
 )

@@ -1,10 +1,10 @@
 package di
 
 import (
-	"example/api/internal/handlers"
-	"example/api/internal/repository"
-	"example/api/internal/server"
-	"example/api/internal/usecase"
+	"gin/rest_api/internal/handlers"
+	"gin/rest_api/internal/repository"
+	"gin/rest_api/internal/server"
+	"gin/rest_api/internal/usecase"
 )
 
 func NewContainer() {
