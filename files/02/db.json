@@ -1,0 +1,25 @@
+{
+  "items": [
+    {
+      "masterId": "328ec2f1-70aa-47b9-ba35-3e36825d79dc",
+      "agreementNumber": "432588/19-м",
+      "inn": "3415449539",
+      "clientName": "ООО 'Уютный дом'",
+      "activationDate": "2023-05-07T12:34"
+    },
+    {
+      "masterId": "51d0d8a5-1b97-483b-b6ea-221afb4f64a8",
+      "inn": "6525470529",
+      "agreementNumber": "5-specialacc",
+      "clientName": "ООО 'Мирный сапог'",
+      "activationDate": "2023-04-25T17:00"
+    },
+    {
+      "masterId": "504ad85d-ed2d-47ae-9033-fde97b1fddf1",
+      "inn": "6525470000",
+      "agreementNumber": "45-acc",
+      "clientName": "ООО 'Мастер'",
+      "activationDate": "2024-04-25T17:00"
+    }
+  ]
+}
