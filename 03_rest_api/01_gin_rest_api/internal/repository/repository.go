@@ -11,7 +11,13 @@ type Repository struct {
 }
 
 func NewRepository() *Repository {
-	todos := &[]models.Todo{}
+	todos := &[]models.Todo{
+		{
+			Id:          "637272b9-ff59-4b46-90fb-087a3b01fc21",
+			Description: "Create Example gin RestAPI",
+			IsActive:    true,
+		},
+	}
 
 	return &Repository{
 		todos,
@@ -35,6 +41,8 @@ func (r *Repository) Create(args *models.CreateTodo) *models.Todo {
 }
 
 func (r *Repository) Update(id string, args *models.UpdateTodo) *models.Todo {
+	todos := &[]models.Todo{}
+
 	todo := &models.Todo{
 		Id:          id,
 		Description: args.Description,
@@ -43,22 +51,33 @@ func (r *Repository) Update(id string, args *models.UpdateTodo) *models.Todo {
 
 	for _, v := range *r.todos {
 		if v.Id == id {
-			v.Description = args.Description
-			v.IsActive = args.IsActive
+			*todos = append(*todos, *todo)
+		} else {
+			*todos = append(*todos, v)
 		}
 	}
+
+	*r.todos = *todos
+
 	return todo
 }
 
 func (r *Repository) Delete(id string) *models.Todo {
+	todos := &[]models.Todo{}
+
 	todo := &models.Todo{}
 
 	for _, v := range *r.todos {
-		if v.Id == id {
-			todo.Id = v.Id
+		if v.Id != id {
+			*todos = append(*todos, v)
+		} else {
 			todo.Description = v.Description
 			todo.IsActive = v.IsActive
+			todo.Id = v.Id
 		}
 	}
+
+	*r.todos = *todos
+
 	return todo
 }

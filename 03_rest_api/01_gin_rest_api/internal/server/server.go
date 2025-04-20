@@ -22,10 +22,12 @@ func NewServer(handlers handlers.Handlers) *Server {
 }
 
 func (s *Server) Run() {
-	baseUrl := s.router.Group("/api/v1")
+	baseUrl := s.router.Group("/api/v1/todos")
 
-	baseUrl.GET("/todos", s.handlers.GetTodos())
-	baseUrl.PUT("/todos", s.handlers.CreateTodo())
-	baseUrl.PATCH("/todos/:id", s.handlers.UpdateTodo())
-	baseUrl.DELETE("/todos/:id", s.handlers.DeleteTodo())
+	baseUrl.GET("/", s.handlers.GetTodos())
+	baseUrl.PUT("/", s.handlers.CreateTodo())
+	baseUrl.PATCH("/:id", s.handlers.UpdateTodo())
+	baseUrl.DELETE("/:id", s.handlers.DeleteTodo())
+
+	s.router.Run("localhost:4321")
 }
