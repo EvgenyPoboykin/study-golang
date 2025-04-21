@@ -10,11 +10,11 @@ import (
 func NewContainer() {
 	r := repository.NewRepository()
 
-	u := usecase.NewTodosUsecase(*r)
+	u := usecase.NewTodosUsecase(r)
 
-	h := handlers.NewTodosHandlers(*u)
+	h := handlers.NewTodosHandlers(u)
 
-	s := server.NewServer(*h)
+	s := server.NewServer(h)
 
 	s.Run()
 }

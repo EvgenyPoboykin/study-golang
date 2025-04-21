@@ -8,11 +8,18 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
-type Handlers struct {
-	usecase usecase.Usecase
+type HandlersInterface interface {
+	GetTodos() gin.HandlerFunc
+	CreateTodo() gin.HandlerFunc
+	UpdateTodo() gin.HandlerFunc
+	DeleteTodo() gin.HandlerFunc
 }
 
-func NewTodosHandlers(uc usecase.Usecase) *Handlers {
+type Handlers struct {
+	usecase usecase.UsecaseInterface
+}
+
+func NewTodosHandlers(uc usecase.UsecaseInterface) *Handlers {
 	return &Handlers{
 		usecase: uc,
 	}
