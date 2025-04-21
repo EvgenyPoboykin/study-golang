@@ -1,0 +1,8 @@
+services:
+  app:
+    container_name: rest_api
+    ports:
+      - "4321:4321"
+    build:
+      context: .
+      dockerfile: ./Dockerfile
