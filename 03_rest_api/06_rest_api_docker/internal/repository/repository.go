@@ -7,13 +7,6 @@ import (
 	"github.com/google/uuid"
 )
 
-type RepositoryInterface interface {
-	Todos() *[]models.Todo
-	Create(args *models.CreateTodo) *models.Todo
-	Update(id string, args *models.UpdateTodo) (*models.Todo, error)
-	Delete(id string) (*models.Todo, error)
-}
-
 type Repository struct {
 	todos *[]models.Todo
 }

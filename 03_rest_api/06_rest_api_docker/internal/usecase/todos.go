@@ -2,21 +2,20 @@ package usecase
 
 import (
 	"base/rest_api/internal/models"
-	"base/rest_api/internal/repository"
 )
 
-type UsecaseInterface interface {
-	GetTodos() *[]models.Todo
-	CreateTodo(args *models.CreateTodo) *models.Todo
-	UpdateTodo(id string, args *models.UpdateTodo) (*models.Todo, error)
-	DeleteTodo(id string) (*models.Todo, error)
+type repository interface {
+	Todos() *[]models.Todo
+	Create(args *models.CreateTodo) *models.Todo
+	Update(id string, args *models.UpdateTodo) (*models.Todo, error)
+	Delete(id string) (*models.Todo, error)
 }
 
 type Usecase struct {
-	repository repository.RepositoryInterface
+	repository repository
 }
 
-func NewTodosUsecase(repository repository.RepositoryInterface) *Usecase {
+func NewTodosUsecase(repository repository) *Usecase {
 	return &Usecase{
 		repository,
 	}

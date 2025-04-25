@@ -1,12 +1,19 @@
 package handlers
 
 import (
-	"base/rest_api/internal/usecase"
+	"base/rest_api/internal/models"
 	"base/rest_api/internal/validation"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
 )
+
+type usecase interface {
+	GetTodos() *[]models.Todo
+	CreateTodo(args *models.CreateTodo) *models.Todo
+	UpdateTodo(id string, args *models.UpdateTodo) (*models.Todo, error)
+	DeleteTodo(id string) (*models.Todo, error)
+}
 
 type HandlersInterface interface {
 	GetTodos() gin.HandlerFunc
@@ -16,10 +23,10 @@ type HandlersInterface interface {
 }
 
 type Handlers struct {
-	usecase usecase.UsecaseInterface
+	usecase usecase
 }
 
-func NewTodosHandlers(uc usecase.UsecaseInterface) *Handlers {
+func NewTodosHandlers(uc usecase) *Handlers {
 	return &Handlers{
 		usecase: uc,
 	}
